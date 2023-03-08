@@ -123,7 +123,7 @@ spec:
    1. git clone https://github.com/do-community/nodejs-image-demo.git istio_project (naveensmily79/node-demo)
    2. git clone https://github.com/do-community/nodejs-canary-app.git node_image (naveensmily79/node-demo-v2)
    
- - i will create two files node-app.yaml & node-istio.yaml
+ - I will create two files node-app.yaml & node-istio.yaml
  contents of node-app.yaml
 
 ```
@@ -265,36 +265,34 @@ kubectl delete ns istio-system
 rm -rf istio-1.17.1 istio-1.17.1-linux-amd64.tar.gz
 ```
 
-
-
-###################################################
+#######################
 Istio setup using helm
-###################################################
+#######################
  - install helm on the cluster
  ```
-	curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-	chmod 700 get_helm.sh
-	./get_helm.sh 
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh 
  ```
  Note:
-  Reference for installing helm: https://helm.sh/docs/intro/install/
+  Reference for installing helm: [link](https://helm.sh/docs/intro/install/)
   
   - Installing the istio using helm
   - add helm repos
-  ```
-  helm repo add istio https://istio-release.storage.googleapis.com/charts
-  helm repo update
-  ```
+```
+helm repo add istio https://istio-release.storage.googleapis.com/charts
+helm repo update
+```
   
 This section describes the procedure to install Istio using Helm. The general syntax for helm installation is:
-
-$ helm install <release> <chart> --namespace <namespace> --create-namespace [--set <other_parameters>]
-
+```
+helm install <release> <chart> --namespace <namespace> --create-namespace [--set <other_parameters>]
+```
 The variables specified in the command are as follows:
 
-<chart> A path to a packaged chart, a path to an unpacked chart directory or a URL.
-<release> A name to identify and manage the Helm chart once installed.
-<namespace> The namespace in which the chart is to be installed.
+'chart' A path to a packaged chart, a path to an unpacked chart directory or a URL.
+'release' A name to identify and manage the Helm chart once installed.
+'namespace' The namespace in which the chart is to be installed.
 
 - Install the Istio base chart which contains cluster-wide Custom Resource Definitions (CRDs) which must be installed prior to the deployment of the Istio control plane:
 ```
