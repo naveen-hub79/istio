@@ -28,14 +28,14 @@
   
   
 ###  Uninstall istio :
- - purge it
-	```
-	istioctl x uninstall --purge
-	```
- - delete istio-system namespace
- ```
- kubectl delete ns istio-system
- ```
+- purge it
+```
+istioctl x uninstall --purge
+```
+- delete istio-system namespace
+```
+kubectl delete ns istio-system
+```
  
 ### install one microservices application to test istio
 
@@ -69,7 +69,7 @@
 Note:
 ```
 To enable monitoring using istio in every deployment or svc there should be a label with key app.(app:value)
-```
+
 - you can learn about 
 	- virtual services (internal communication)
 	- Destination rules
@@ -85,16 +85,17 @@ To enable monitoring using istio in every deployment or svc there should be a la
 - reference: https://istio.io/latest/docs/concepts/traffic-management/
 
 #############################################################################
-Metallb setup
+### Metallb setup
 #############################################################################
+
 ```
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.9/config/manifests/metallb-native.yaml
 kubectl apply -f metallb-config.yaml
 kubectl apply -f metallb-l2advert.yaml
 ```
  - file metallb-config.yaml contents:
- ```
- apiVersion: metallb.io/v1beta1
+```
+apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
   name: first-pool
@@ -102,10 +103,10 @@ metadata:
 spec:
   addresses:
   - 192.168.1.240-192.168.1.250
-  ```
+```
  - file metallb-l2advert.yaml contents:
- ```
-  apiVersion: metallb.io/v1beta1
+```
+apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
   name: example
@@ -113,10 +114,9 @@ metadata:
 spec:
   ipAddressPools:
   - first-pool
-  ```
+```
 ###########################################################################
-
-Setting up application using Virtual service and Gateway for testing canary deployment
+### Setting up application using Virtual service and Gateway for testing canary deployment
 ##########################################################
  - we have to create a service ,two deployments(two versions),virtual service,gateway,destination rules.
  - I am using two versions of a image fgrom my docker hub which i build from digitaloceans reference repos
@@ -125,8 +125,9 @@ Setting up application using Virtual service and Gateway for testing canary depl
    
  - i will create two files node-app.yaml & node-istio.yaml
  contents of node-app.yaml
+ 
  ```
- apiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: nodejs
