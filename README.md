@@ -343,6 +343,11 @@ helm search repo istio
 Reference:
  https://istio.io/latest/docs/setup/install/helm/
 
+### References:
+1. [link1](https://www.youtube.com/watch?v=16fgzklcF7Y)
+2. [link2](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-istio-with-kubernetes)
+3. [link3](https://www.digitalocean.com/community/tutorials/how-to-do-canary-deployments-with-istio-and-kubernetes)
+
 
  
 
