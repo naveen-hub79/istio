@@ -305,7 +305,7 @@ To learn more about the release, try:
   helm ls -n istio-system
 ```
 
-- nstall the Istio discovery chart which deploys the istiod service:
+- Install the Istio discovery chart which deploys the istiod service:
 ```
 helm install istiod istio/istiod -n istio-system --wait
 helm ls -n istio-system
@@ -320,7 +320,7 @@ helm status istiod -n istio-system
 helm install istio-ingress istio/gateway -n istio-system --wait
 ```
 
-- to list the available repos 
+- To list the available repos 
 ```
 helm repo list
 ```
@@ -334,7 +334,8 @@ helm search repo istio
 ```
 
 Note:
-```Reference: https://istio.io/latest/docs/setup/install/helm/
+```
+Reference: [link](https://istio.io/latest/docs/setup/install/helm/) https://istio.io/latest/docs/setup/install/helm/
 ```
 
  
