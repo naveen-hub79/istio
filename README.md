@@ -84,9 +84,7 @@ To enable monitoring using istio in every deployment or svc there should be a la
   
 - reference: https://istio.io/latest/docs/concepts/traffic-management/
 
-#############################################################################
 ### Metallb setup
-#############################################################################
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.9/config/manifests/metallb-native.yaml
@@ -115,9 +113,9 @@ spec:
   ipAddressPools:
   - first-pool
 ```
-##########################################################
+
 ### Setting up application using Virtual service and Gateway for testing canary deployment
-##########################################################
+
  - we have to create a service ,two deployments(two versions),virtual service,gateway,destination rules.
  - I am using two versions of a image fgrom my docker hub which i build from digitaloceans reference repos
    1. git clone https://github.com/do-community/nodejs-image-demo.git istio_project (naveensmily79/node-demo)
@@ -251,9 +249,9 @@ Reference1: https://www.digitalocean.com/community/tutorials/how-to-install-and-
 Reference2: https://www.digitalocean.com/community/tutorials/how-to-do-canary-deployments-with-istio-and-kubernetes
 ```
 
-###################
-Cleaning
-###################
+
+### Cleaning
+
 ```
 kubectl delete -f  node-istio.yaml
 kubectl delete -f node-app.yaml
@@ -265,9 +263,9 @@ kubectl delete ns istio-system
 rm -rf istio-1.17.1 istio-1.17.1-linux-amd64.tar.gz
 ```
 
-#######################
-Istio setup using helm
-#######################
+
+### Istio setup using helm
+
  - install helm on the cluster
  ```
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
