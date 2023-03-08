@@ -254,11 +254,10 @@ spec:
  
 - apply both yamls and test the service with istio ingress IP address
 
-Note:
-```
-Reference1: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-istio-with-kubernetes
-Reference2: https://www.digitalocean.com/community/tutorials/how-to-do-canary-deployments-with-istio-and-kubernetes
-```
+References:
+- Reference1: [link](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-istio-with-kubernetes)
+- Reference2: [link](https://www.digitalocean.com/community/tutorials/how-to-do-canary-deployments-with-istio-and-kubernetes)
+
 
 
 ### Cleaning
@@ -283,9 +282,8 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh 
  ```
- Note:
-  Reference for installing helm: [link](https://helm.sh/docs/intro/install/)
-  
+ Reference:
+  For installing helm: [link](https://helm.sh/docs/intro/install/) 
   - Installing the istio using helm
   - add helm repos
 ```
@@ -342,10 +340,9 @@ helm search repo istio
  helm template istio/cni
 ```
 
-Note:
-```
-Reference: https://istio.io/latest/docs/setup/install/helm/
-```
+Reference:
+ https://istio.io/latest/docs/setup/install/helm/
+
 
  
 
