@@ -290,9 +290,9 @@ helm install <release> <chart> --namespace <namespace> --create-namespace [--set
 ```
 The variables specified in the command are as follows:
 
-'chart' A path to a packaged chart, a path to an unpacked chart directory or a URL.
-'release' A name to identify and manage the Helm chart once installed.
-'namespace' The namespace in which the chart is to be installed.
+'chart' A path to a packaged chart, a path to an unpacked chart directory or a URL\n.
+'release' A name to identify and manage the Helm chart once installed\n.
+'namespace' The namespace in which the chart is to be installed\n.
 
 - Install the Istio base chart which contains cluster-wide Custom Resource Definitions (CRDs) which must be installed prior to the deployment of the Istio control plane:
 ```
