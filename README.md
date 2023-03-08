@@ -335,7 +335,7 @@ helm search repo istio
 
 Note:
 ```
-Reference: [link](https://istio.io/latest/docs/setup/install/helm/) https://istio.io/latest/docs/setup/install/helm/
+Reference: https://istio.io/latest/docs/setup/install/helm/
 ```
 
  
