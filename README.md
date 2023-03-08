@@ -2,13 +2,13 @@
 
  Note:
  ```
- If you face error in installating egrees gateway or ingress gateway try with -1 version or restart masternode
+ If you face error in installating egress gateway or ingress gateway try with -1 versions or restart master node of cluster.
  ```
 
 ### steps:
 
  - setup the kubernetes cluster
- - download the tar file of your version(https://github.com/istio/istio/releases)
+ - download the tar file of your version[release](https://github.com/istio/istio/releases)
  ```
  wget https://github.com/istio/istio/releases/download/1.17.1/istio-1.17.1-linux-amd64.tar.gz
  ```
@@ -125,7 +125,7 @@ spec:
    
  - i will create two files node-app.yaml & node-istio.yaml
  contents of node-app.yaml
- 
+
  ```
 apiVersion: v1
 kind: Service
