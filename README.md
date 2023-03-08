@@ -8,7 +8,7 @@
 ### steps:
 
  - setup the kubernetes cluster
- - download the tar file of your version[release](https://github.com/istio/istio/releases)
+ - download the tar file of your version [release](https://github.com/istio/istio/releases)
  ```
  wget https://github.com/istio/istio/releases/download/1.17.1/istio-1.17.1-linux-amd64.tar.gz
  ```
@@ -16,15 +16,14 @@
  ```
  tar -xvzf istio-1.17.1-linux-amd64.tar.gz
  ```
-  - add bin of istiop to the path
+  - add bin directory of istio to the path
   ```
    export PATH=$PATH:/home/nmaster-0/istio/istio-1.17.1/bin
   ```
-  - install istio using any of the provided profiles.here i am using demo profile
+  - install istio using any of the provided profiles,Here i am using demo profile
   ```
   istioctl install --set profile=demo -y
   ```
-  
   
   
 ###  Uninstall istio :
@@ -43,31 +42,32 @@ kubectl delete ns istio-system
  ```
  kubectl label namespace default istio-injection=enabled
  ```
- - create a sample manifest file for application(here iam using googlecloud boutiq app)link(https://github.com/GoogleCloudPlatform/microservices-demo/blob/main/release/kubernetes-manifests.yaml)
+ - create a sample manifest file for application(here iam using googlecloud boutiq app) [link](https://github.com/GoogleCloudPlatform/microservices-demo/blob/main/release/kubernetes-manifests.yaml)
  ```
  kubectl apply -f kuberenetes-manifests.yaml
  ```
- - to delete that label 
+ - To delete that label 
  ```
  kubectl label namespace default istio-injection-
  ```
  
 ### Install istio addons to enable monitoring
- - all addons will present in istio-1.17.1/samples/addons/
- - i am deploying all the addons but you can install only required addons using respective manifests
+ - All addons will present in istio-1.17.1/samples/addons/
+ - I am deploying all the addons but you can install only required addons using respective manifests
  ```
  kubectl apply -f istio-1.17.1/samples/addons/
  ```
  - check all the pods in istio-system namespace
-  ```
-  kubectl get pods -n istio-system
-  ```
- - check their respective services up and running
- ```
- kubectl get svc -n istio-system```
- - if you can browse using your master machine you can use portforward to access kiali dashboard else you have to use ingress or nodeport
-Note:
 ```
+  kubectl get pods -n istio-system
+```
+ - check their respective services up and running
+```
+ kubectl get svc -n istio-system
+```
+ - if you can browse using your master machine you can use portforward to access kiali dashboard else you have to use ingress or nodeport
+
+##### Note:
 To enable monitoring using istio in every deployment or svc there should be a label with key app.(app:value)
 
 - you can learn about 
@@ -115,7 +115,7 @@ spec:
   ipAddressPools:
   - first-pool
 ```
-###########################################################################
+##########################################################
 ### Setting up application using Virtual service and Gateway for testing canary deployment
 ##########################################################
  - we have to create a service ,two deployments(two versions),virtual service,gateway,destination rules.
@@ -126,7 +126,7 @@ spec:
  - i will create two files node-app.yaml & node-istio.yaml
  contents of node-app.yaml
 
- ```
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -187,11 +187,10 @@ spec:
         image: naveensmily79/node-demo-v2
         ports:
         - containerPort: 8080
- ```
- 
+```
  - contents of node-istio.yaml
- ```
- apiVersion: networking.istio.io/v1alpha3
+```
+apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: nodejs-gateway
@@ -242,16 +241,17 @@ spec:
     labels:
       version: v2
 	  
- ```
+```
  
 - apply both yamls and test the service with istio ingress IP address
+
 Note:
 ```
 Reference1: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-istio-with-kubernetes
 Reference2: https://www.digitalocean.com/community/tutorials/how-to-do-canary-deployments-with-istio-and-kubernetes
 ```
 
-#################
+###################
 Cleaning
 ###################
 ```
@@ -269,7 +269,7 @@ rm -rf istio-1.17.1 istio-1.17.1-linux-amd64.tar.gz
 
 ###################################################
 Istio setup using helm
-##########################################
+###################################################
  - install helm on the cluster
  ```
 	curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
