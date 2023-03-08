@@ -1,3 +1,14 @@
+## Introduction to Istio
+Istio is an open-source service mesh that provides a uniform way to connect, manage, and secure microservices. It's designed to help you manage the complexities of a large and complex distributed system, by providing features such as traffic management, security, and observability.
+
+With Istio, you can control and manage the flow of traffic between microservices, including load balancing, traffic routing, and fault injection. Istio also provides strong authentication, authorization, and encryption for microservices traffic, helping to secure your system against attacks and data breaches.
+
+In addition, Istio can collect telemetry data and generate metrics, logs, and traces to provide visibility into your microservices system. This helps you to monitor and troubleshoot your system, and make data-driven decisions about how to improve performance and reliability.
+
+Istio achieves these features by injecting a sidecar proxy into each pod in your Kubernetes cluster. This proxy intercepts all network traffic and routes it through the Istio control plane, which manages traffic flows and applies policies.
+
+Istio is designed to be flexible and extensible, with a range of configuration options and integrations with other tools such as Prometheus, Grafana, and Jaeger. It can be used to manage microservices across multiple clusters, clouds, and environments, making it a powerful tool for building and managing distributed systems.
+
 ## Installing istio on kubernetes cluster:
 
  Note:
